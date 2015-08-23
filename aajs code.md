@@ -1,5 +1,6 @@
 # Anti-Accident-Junction-Spike-system-AAJS-
 The project titled ‘Anti Accident  Junction Spike system (AAJS)’ focuses on the road safety. This is an innovative idea to stop the violation of the traffic signals and thereby reduce the number of road accidents. We included a spike system along with the normal signal system. And also we have provided a RF module to control the spikes and traffic lights. When the traffic signal become yellow  spikes will rise and  this lasts till the signal again become yellow ,so it is not possible for the vehicles to cross the road when the signal is red . When the time arrives, the signal turn back to yellow, from that moment itself spike system will move down. When the signal becomes green the spike will be down completely from the road so that vehicles can pass. The working of the alternate road is similar but opposite.  When the first signal turns red   then alternate signal turns green. That is when the first signal becomes yellow, the first spike goes up and the alternate spike turns down. In case of some emergency situations like fire engine and ambulances to pass through, the spike system can be externally controlled by the RF module. The spike can be forcefully made down using keys in the RF module so that the vehicle can pass. This system also ensures smooth and fast riding of these emergency vehicles by turning on red lights. The main objective of this project named ‘Anti Accident  Junction Spike system (AAJS)’ is ensuring road safety  and it also tempts people to obey traffic rules and come under  the pillar  law enforcement .  We hope this project will be a new mile stone in the field of electronics and law enforcement in road safety at junctions.
+
 program code
 
 sbit DTMF1 at RC0_bit;
@@ -16,7 +17,7 @@ sbit Yellow2 at RB4_bit;
 sbit Green2 at RB5_bit;
 
 
- void servoRotate0_2() //0 Degree
+ void servoRotate0_2() 
 {
   unsigned int i;
   for(i=0;i<50;i++)
@@ -28,7 +29,7 @@ sbit Green2 at RB5_bit;
   }
 }
 
-void servoRotate90_2() //90 Degree
+void servoRotate90_2() 
 {
   unsigned int i;
   for(i=0;i<50;i++)
@@ -39,7 +40,7 @@ void servoRotate90_2() //90 Degree
     Delay_us(18500);
   }
 }
-void servoRotate0() //0 Degree
+void servoRotate0() 
 {
   unsigned int i;
   for(i=0;i<50;i++)
@@ -51,7 +52,7 @@ void servoRotate0() //0 Degree
   }
 }
 
-void servoRotate90() //90 Degree
+void servoRotate90() 
 {
   unsigned int i;
   for(i=0;i<50;i++)
@@ -63,7 +64,7 @@ void servoRotate90() //90 Degree
   }
 }
 
-void servoRotate180() //180 Degree
+void servoRotate180() 
 {
   unsigned int i;
   for(i=0;i<50;i++)
@@ -119,33 +120,33 @@ void servoRotate180() //180 Degree
    {
     Red11();
     Red22();
-     servoRotate0(); //0 Degree
+     servoRotate0(); 
 
-     servoRotate0_2(); //0 Degree
+     servoRotate0_2(); 
     delay_ms(3000);
    }
 
 void main()
 {
   PORTB=0;
-  TRISB = 0; // PORTB as Ouput Port
+  TRISB = 0; 
  PORTC=0;
   TRISC=0XFF;
   
   
-  servoRotate0(); //0 Degree
-  servoRotate0_2(); //0 Degree
+  servoRotate0(); 
+  servoRotate0_2(); 
 
     Delay_ms(1000);
-    servoRotate90(); //90 Degree
+    servoRotate90(); 
   while(1)
   {
   
 
      Green11();
      Red22();
-     servoRotate90_2(); //90 Degree
-     servoRotate0(); //0 Degree
+     servoRotate90_2(); 
+     servoRotate0(); 
     while(DTMF1||DTMF2||DTMF3||DTMF4)
       {
         ambulnce();
@@ -154,8 +155,8 @@ void main()
 
      Yellow11();
      Yellow22();
-     servoRotate0_2(); //0 Degree
-     servoRotate90(); //90 Degree
+     servoRotate0_2(); 
+     servoRotate90(); 
      
       while(DTMF1||DTMF2||DTMF3||DTMF4)
       {
@@ -169,8 +170,8 @@ void main()
 
       Yellow11();
       Yellow22();
-       servoRotate90_2(); //90 Degree
-      servoRotate0(); //0 Degree
+       servoRotate90_2(); 
+      servoRotate0(); 
       
     while(DTMF1||DTMF2||DTMF3||DTMF4)
       {
@@ -187,6 +188,6 @@ void main()
       Delay_ms(3000);
   }
 }
-program code
+
 
 
